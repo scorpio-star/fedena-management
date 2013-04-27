@@ -25,6 +25,9 @@ Fedena::Application.routes.draw do
   #     end
   #   end
   resources :students
+  match "students/:id/guardian_details" => "students#guardian_details", :as => "students_guardian_details"
+  match "students/:id/guardian_details_update" => "students#guardian_details_update", :via => :put, :as => "students_guardian_details_update"
+  #match "students/guardian" => "students#guardian_new", :as => "student_guardian_new"
 
 
   # Sample resource route with sub-resources:

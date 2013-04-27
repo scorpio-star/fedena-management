@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425203221) do
+ActiveRecord::Schema.define(:version => 20130427133042) do
 
   create_table "admissions", :force => true do |t|
     t.integer  "number"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20130425203221) do
     t.string   "address_line_2"
     t.string   "city"
     t.string   "state"
-    t.integer  "city_id"
+    t.integer  "country_id"
     t.integer  "phone_1"
     t.integer  "phone_2"
     t.integer  "mobile"
@@ -108,8 +108,13 @@ ActiveRecord::Schema.define(:version => 20130425203221) do
     t.integer  "category_id"
     t.string   "religion"
     t.string   "mother_tongue"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.boolean  "is_sms_enabled"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end

@@ -7,7 +7,7 @@ class CreateGuardianContactDetails < ActiveRecord::Migration
       t.string :address_line_2
       t.string :city
       t.string :state
-      t.integer :city_id
+      t.integer :country_id
       t.integer :phone_1
       t.integer :phone_2
       t.integer :mobile

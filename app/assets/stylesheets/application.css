@@ -433,6 +433,16 @@ body > #content_wrapper {
     font-weight: 600;
 
 }
+.label-field-pair p {
+    background : #eee;
+    border : 1px solid #c6c6c6;
+    margin : 5px 0 0 10px;
+    width : 205px;
+    height:17px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding: 5px;
+}
 .label-field-pair input {
     background : #eee;
     border : 1px solid #c6c6c6;
@@ -443,6 +453,7 @@ body > #content_wrapper {
     -webkit-border-radius:10px;
     padding: 5px;
 }
+
 .text-input-bg select {
     background-color : #eee;
     border : 1px solid #c6c6c6;
