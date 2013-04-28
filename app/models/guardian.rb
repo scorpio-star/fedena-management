@@ -1,8 +1,5 @@
 class Guardian < ActiveRecord::Base
-  attr_accessible :guardian_contact_details_attributes, :guardian_contact_detail_id, :first_name, :middle_name, 
-  :last_name, :date_of_birth, :education, :occupation, :income
+  attr_accessible :first_name, :last_name, :relation, :date_of_birth, :education, :occupation, :income, :email, :address_line_1, :address_line_2, :city, :state, :country_id, :phone_1, :phone_2, :mobile
   
-  belongs_to :student_id
-  has_one :guardian_contact_detail
-  accepts_nested_attributes_for :guardian_contact_detail
+  belongs_to :student
 end

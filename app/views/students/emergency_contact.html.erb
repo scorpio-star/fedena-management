@@ -1,0 +1,44 @@
+<div id="content-header">
+  <img alt="Admission_page_logo" src="/images/admission/admission_page_logo.jpg?1350041856" />
+  <h1>Admission</h1>
+  <h3>Step 3 - Emergency contact</h3>
+</div>
+
+<div id="page-yield">
+  <p class="flash-msg">Select one of the guardians as emergency contact.</p>
+  <%= form_for @student, :url => student_emergency_contact_update_path(@student) do |f| %>
+
+  <div style="margin:0;padding:0;display:inline">
+    <% @guardians.each do |guardian| %>
+    <ul id="parents-list">
+      <li class="listodd">
+        <%= f.radio_button "emergency_contact_id", guardian.id %><%= guardian.first_name %>
+      </li>
+    </ul>
+    <% end %> 
+  </div>
+
+    <!-- <input name="authenticity_token" type="hidden" value="jQYhb6g9BgbCRMOfUeiKQagMDFAnRSiC6GvMiIyMu0A=" />
+    <ul id="parents-list">
+        <li class="listodd">
+          
+            <input checked="checked" id="immediate_contact_contact_39" name="immediate_contact[contact]" type="radio" value="39" /> sd 
+          
+        </li>
+      
+    </ul> -->
+    <div id="submit-button">
+      <%= f.submit "► Finish", :id => 'finish-button' %>
+    </div>
+    <% end %>
+  </form>
+</div> 
+    <div class="extender"></div>
+
+    <div id="footer">
+      <div id="footer_logo">
+        <div id="powered_by">
+          Powered by <a href=http://www.projectfedena.org target="_blank">Fedena</a>
+        </div>
+      </div>
+    </div> 

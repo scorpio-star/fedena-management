@@ -1,8 +1,6 @@
 class CreateStudents < ActiveRecord::Migration
   def change
     create_table :students do |t|
-      t.integer :admission_id
-      t.integer :contact_detail_id
       t.string :first_name
       t.string :middle_name
       t.string :last_name

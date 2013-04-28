@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GuardianContactDetailTest < ActiveSupport::TestCase
+class EducationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

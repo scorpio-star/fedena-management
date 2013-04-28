@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427133042) do
+ActiveRecord::Schema.define(:version => 20130428201747) do
+
+  create_table "additional_details", :force => true do |t|
+    t.string   "passport"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "admissions", :force => true do |t|
     t.integer  "number"
@@ -57,8 +63,33 @@ ActiveRecord::Schema.define(:version => 20130427133042) do
     t.datetime "updated_at",     :null => false
   end
 
-  create_table "guardian_contact_details", :force => true do |t|
-    t.integer  "guardian_id"
+  create_table "education_types", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "educations", :force => true do |t|
+    t.integer  "student_id"
+    t.integer  "education_type_id"
+    t.string   "institute_name"
+    t.string   "course"
+    t.integer  "year"
+    t.integer  "total_marks"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "guardians", :force => true do |t|
+    t.integer  "student_id"
+    t.string   "first_name"
+    t.string   "relation"
+    t.string   "last_name"
+    t.date     "date_of_birth"
+    t.string   "education"
+    t.string   "occupation"
+    t.integer  "income"
     t.string   "email"
     t.string   "address_line_1"
     t.string   "address_line_2"
@@ -70,20 +101,6 @@ ActiveRecord::Schema.define(:version => 20130427133042) do
     t.integer  "mobile"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
-  end
-
-  create_table "guardians", :force => true do |t|
-    t.string   "first_name"
-    t.string   "middle_name"
-    t.string   "last_name"
-    t.date     "date_of_birth"
-    t.string   "education"
-    t.string   "occupation"
-    t.integer  "income"
-    t.integer  "guardian_contact_detail_id"
-    t.integer  "student_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
   end
 
   create_table "nationalities", :force => true do |t|
@@ -108,13 +125,22 @@ ActiveRecord::Schema.define(:version => 20130427133042) do
     t.integer  "category_id"
     t.string   "religion"
     t.string   "mother_tongue"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.boolean  "is_sms_enabled"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "emergency_contact_id"
+  end
+
+  create_table "subjects", :force => true do |t|
+    t.string   "subject"
+    t.decimal  "marks",      :precision => 10, :scale => 0
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.integer  "student_id"
   end
 
 end

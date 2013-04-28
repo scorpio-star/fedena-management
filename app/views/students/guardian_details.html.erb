@@ -27,18 +27,18 @@
 
         <div class="label-field-pair">
           <label for="parent_detail_student_id">Student Admission number</label>
-          <div class="text_display"><%#= @student.admission.admission_number %></div>
+          <div class="text_display"><%= @student.admission.number %></div>
          <!--  <input id="    guardian_ward_id" name="guardian[ward_id]" type="hidden" value="72" /> -->
         </div>
 
         <br/>
         <span class="span-sub-heading">Parent - Personal Details</span>
         <hr class="sub-heading"></hr>
-        <%= f.fields_for :guardian do |g| %>
+        <%= f.fields_for :guardians do |guardian| %>
         <div class="label-field-pair">
           <label for="parent_detail_name">First Name<span class="necessary-field">*</span></label>
           <div class="text-input-bg">
-            <%= g.text_field :first_name %>
+            <%= guardian.text_field :first_name %>
           </div>
         </div>
 
@@ -47,7 +47,7 @@
         <div class="label-field-pair">
           <label for="parent_detail_name">Last Name</label>
           <div class="text-input-bg">
-            <%= g.text_field :last_name %>
+            <%= guardian.text_field :last_name %>
           </div>
         </div>
 
@@ -56,7 +56,7 @@
         <div class="label-field-pair">
           <label for="parent_detail_relation">Relation<span class="necessary-field">*</span></label>
           <div class="text-input-bg">
-            <%= g.text_field :relation %>
+            <%= guardian.text_field :relation %>
           </div>
         </div>
 
@@ -65,7 +65,7 @@
         <div class="label-field-pair">
           <label for="parent_detail_dob">Date of Birth</label>
           <div class="text-input-bg">
-            <%= g.text_field :date_of_birth %>
+            <%= guardian.text_field :date_of_birth %>
           </div>
         </div>
 
@@ -74,7 +74,7 @@
         <div class="label-field-pair">
           <label for="parent_detail_education">Education</label>
           <div class="text-input-bg">
-            <%= g.text_field :education %>
+            <%= guardian.text_field :education %>
           </div>
         </div>
 
@@ -83,7 +83,7 @@
         <div class="label-field-pair">
           <label for="parent_detail_occupation">Occupation</label>
           <div class="text-input-bg">
-            <%= g.text_field :Occupation %>
+            <%= guardian.text_field :occupation %>
           </div>
         </div>
 
@@ -92,7 +92,7 @@
         <div class="label-field-pair">
           <label for="parent_detail_income">Income</label>
           <div class="text-input-bg">
-            <%= g.text_field :income %>
+            <%= guardian.text_field :income %>
           </div>
         </div>
 
@@ -101,11 +101,10 @@
         <span class="span-sub-heading">Parent - Contact Details</span>
 
         <hr class="sub-heading"></hr>
-        <%= g.fields_for :guardian_contact_detail do |guardian_cnt| %>
         <div class="label-field-pair">
           <label for="parent_detail_email">Email</label>
           <div class="text-input-bg">
-            <%= guardian_cnt.text_field :email %>
+            <%= guardian.text_field :email %>
           </div>
         </div>
 
@@ -118,7 +117,7 @@
           <label for="master_student_city">Address Line 1</label>
           
             <div class="text-input-bg">
-              <%= guardian_cnt.text_field :address_line_1 %>
+              <%= guardian.text_field :address_line_1 %>
             </div>
           
         </div>
@@ -129,7 +128,7 @@
           <label for="master_student_city">Address Line 2</label>
           
             <div class="text-input-bg">
-              <%= guardian_cnt.text_field :address_line_2 %>
+              <%= guardian.text_field :address_line_2 %>
             </div>
           
         </div>
@@ -140,7 +139,7 @@
           <label for="parent_detail_city">City</label>
           
             <div class="text-input-bg">
-              <%= guardian_cnt.text_field :city %>
+              <%= guardian.text_field :city %>
             </div>
           
         </div>
@@ -151,7 +150,7 @@
           <label for="parent_detail_state">State</label>
           
             <div class="text-input-bg">
-              <%= guardian_cnt.text_field :state %>
+              <%= guardian.text_field :state %>
             </div>
           
         </div>
@@ -161,7 +160,7 @@
         <div class="label-field-pair">
           <label for="parent_detail_country">Country</label>
           <div class="text-input-bg">
-            <%= guardian_cnt.select :country_id, options_from_collection_for_select(Nationality.all, :id, :name) %>
+            <%= guardian.select :country_id, options_from_collection_for_select(Nationality.all, :id, :name) %>
           </div>
 
         <hr class="label-underline"></hr>
@@ -169,7 +168,7 @@
         <div class="label-field-pair">
           <label for="parent_detail_office_phone1">Phone 1</label>
           <div class="text-input-bg">
-            <%= guardian_cnt.text_field :phone_1 %>
+            <%= guardian.text_field :phone_1 %>
           </div>
         </div>
 
@@ -178,7 +177,7 @@
         <div class="label-field-pair">
           <label for="parent_detail_office_phone2">Phone 2</label>
           <div class="text-input-bg">
-            <%= guardian_cnt.text_field :phone_2 %>
+            <%= guardian.text_field :phone_2 %>
           </div>
         </div>
 
@@ -187,7 +186,7 @@
         <div class="label-field-pair">
           <label for="parent_detail_mob_phone">Mobile</label>
           <div class="text-input-bg">
-            <%= guardian_cnt.text_field :mobile %>
+            <%= guardian.text_field :mobile %>
           </div>
         </div>
 
@@ -203,7 +202,6 @@
       </div>
 
     </div>
-    <% end %>
     <% end %>
     <% end %>
   </form>
