@@ -1,0 +1,123 @@
+<div id="content_wrapper" >
+      <div id="side_bar">
+
+        <div id="sidebar_news_area">
+          
+        </div>
+      </div>
+      <div id="content"> 
+<div id="content-header">
+ <img alt="Student_details_logo" src="/images/student_details/student_details_logo.jpg?1350041856" />
+  <h1>Parents Info</h1>
+  <h3>Parents Profile</h3>
+  <div id="app-back-button">
+    <a href="#" onclick="history.back(); return false;"><img alt="Back" border="0" src="/images/buttons/back.png?1350041856" /></a>
+  </div>
+</div>
+
+<div id="inner-tab-menu">
+  <ul>
+    <li><a href="/student/profile/75">Student Profile</a></li>
+    
+      <li><a href="/student/add_guardian/75">Add Guardian</a></li>
+    
+  </ul>
+</div>
+
+<div id="page-yield">
+
+  
+
+  <div id="student_profile_heading">
+
+
+
+    <div id="student_main_info">
+      <span class="name"><%= @student.first_name %></span>
+      <span class="course">Course & Batch:<%= @student.course_batch.id %></span>
+      <span class="adm">Adm no.: <%= @student.admission.number %></span>
+    </div>
+
+    <div class="extender"> </div>
+
+  </div>
+
+  <div id="guardians-links">
+
+    <ul>
+      <span>Parents/Guardian:</span>
+      
+        <li><a href="#guardian-details-id-48"><%= @guardian.first_name %></a> (<%= @guardian.last_name %>)</li>
+    </ul>
+  </div>
+
+  <div id="parent-list">
+      <a name="guardian-details-id-48"> </a>
+      <div id="new_profile_info_top">
+        <div class="profile_top_banner">
+          <span class="profile">Details</span>
+          <img alt="Topbanner" src="/images/master_student/profile/topbanner.png?1350041856" /></div>
+        <div class="profile_info_label">Name</div>
+        <div class="profile_info_text">
+          <%= @guardian.first_name %> 
+        </div>
+
+        <div class="profile_info_label2">Relation</div>
+        <div class="profile_info_text2"><%= @guardian.relation %></div>
+
+        <div class="profile_info_label">Date of Birth</div>
+        <div class="profile_info_text"><%= @guardian.date_of_birth %></div>
+
+
+        <div class="new_profile_info_area1">
+          <div class="profile_info_label2">Email</div>
+          <div class="profile_info_text2"><%= @guardian.email %></div>
+
+          <div class="profile_info_label">Office phone 1</div>
+          <div class="profile_info_text"><%= @guardian.phone_1 %></div>
+        </div>
+
+        <div class="new_profile_info_area1">
+          <div class="profile_info_label2">Office phone 2</div>
+          <div class="profile_info_text2"><%= @guardian.phone_2 %></div>
+
+          <div class="profile_info_label">Mobile Phone no.</div>
+          <div class="profile_info_text"><%= @guardian.mobile %></div>
+        </div>
+
+        <div class="new_profile_info_area1">
+          <div class="profile_info_label2">Address</div>
+          <div class="profile_info_text2"><%= "#{@guardian.address_line_1}, #{@guardian.address_line_2}" %></div>
+
+          <div class="profile_info_label">Country</div>
+          <div class="profile_info_text"><%#= @guardian.country.name %></div>
+        </div>
+
+        <div class="new_profile_info_area1">
+          <div class="profile_info_label2">Income</div>
+          <div class="profile_info_text2"><%= @guardian.income %>%></div>
+
+          <div class="profile_info_label">Occupation</div>
+          <div class="profile_info_text"><%= @guardian.occupation %></div>
+        </div>
+        <div class="extender"></div>
+      </div>
+      <div class="button-pair">
+          <div class="parent-edit-button">
+            <a href="/student/edit_guardian/48">► Edit</a>
+          </div>
+      </div>
+
+      <div class="extender"></div>
+  </div>
+</div> </div>
+      <div class="extender"></div>
+    </div>
+
+    <div id="footer">
+      <div id="footer_logo">
+        <div id="powered_by">
+          Powered by <a href=http://www.projectfedena.org target="_blank">Fedena</a>
+        </div>
+      </div>
+    </div> 

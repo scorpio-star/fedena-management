@@ -19,6 +19,7 @@ class StudentsController < ApplicationController
   end
 
   def edit
+    @student = Student.find(params[:id])
   end
   
   def update
@@ -30,6 +31,11 @@ class StudentsController < ApplicationController
   def guardian_details
     @student = Student.find(params[:id])
     @student.guardians.build()
+  end
+
+  def edit_guardian_details
+    @student = Student.find(params[:id])
+    @guardian = @student.emergency_contact
   end
 
   def guardian_details_update
@@ -74,7 +80,6 @@ class StudentsController < ApplicationController
   
   def additional_details 
     @student = Student.find(params[:id])
-    @student.build_additional_detail
   end
     
   def additional_details_update

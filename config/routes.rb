@@ -35,7 +35,7 @@ Fedena::Application.routes.draw do
   match "students/:id/additional_details" => "students#additional_details", :as => "student_additional_details"
   match "students/:id/additional_details_update" => "students#additional_details_update", :as => "student_additional_details_update"
   match "students/:id/profile" => "students#profile", :as => "student_profile"
-
+  match "students/:id/edit_guardian_details" => "students#edit_guardian_details", :as => "student_edit_guardian_details"
 
 
 

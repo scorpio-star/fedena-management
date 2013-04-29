@@ -116,9 +116,9 @@
       </tr>
       
       <tr class="even left">
-        <td>In case of emergencies, contact :</td>
+        <td>In case of emergencies contact :</td>
         <td class="right">
-          <a href="/student/guardians/64"><%= @student.emergency_contact.try(:first_name) %><!-- TODO need to show edit guardian details -->
+          <a href="<%= student_edit_guardian_details_path %>">df<%= @student.emergency_contact.id %><!-- TODO need to show edit guardian details -->
           </a>
           <span>(<a href="<%= student_emergency_contact_path %>">Change immediate contact</a>)</span>
             
@@ -126,7 +126,7 @@
         </tr>
         <tr class="odd left">
           <td>PASSPORT NO</td>
-          <td class="right"><%= @student.additional_detail.passport %></td>
+          <td class="right"><%= @student.passport %></td>
         </tr>
         <tr class="odd left">
           <td></td>
@@ -139,9 +139,8 @@
           <td class="right">No Previous data (<a href="<%= student_previous_data_path %>">Add Previous Data</a>)</td>
         </tr>
     </table>
-    
       <div class="buttons">
-        <a href="/student/edit/64" class="user_button"> ► Edit</a>
+        <a href="<%= edit_student_path %>" class="user_button"> ► Edit</a>
 
         <a href="/student/profile_pdf/64" class="user_button" target="_blank"> ► PDF Report</a>
       </div>
