@@ -7,8 +7,10 @@ class Student < ActiveRecord::Base
   has_many :guardians
   has_one :admission
   has_one :contact_detail
-  has_one :course_batch, :class_name => "Batch"
-  has_one :blood_group
+  belongs_to :course_batch, :class_name => :batch
+  belongs_to :blood_group
+  belongs_to :category
+  belongs_to :emergency_contact, :class_name => :guardian
   has_one :education
   has_many :subjects
   has_one :additional_detail

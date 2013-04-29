@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130428201747) do
+ActiveRecord::Schema.define(:version => 20130429050308) do
 
   create_table "additional_details", :force => true do |t|
     t.string   "passport"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "student_id"
   end
 
   create_table "admissions", :force => true do |t|

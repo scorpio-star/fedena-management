@@ -1,0 +1,163 @@
+<div id="content_wrapper" >
+      <div id="side_bar">
+
+        <div id="sidebar_news_area">
+          
+        </div>
+      </div>
+      <div id="content"> 
+<div id="content-header">
+  <img src="/images/student_details/student_details_logo.jpg" />
+  <h1>Student info</h1>
+  <h3>Student Profile</h3>
+  <div id="app-back-button">
+    <a href="#" onclick="history.back(); return false;"><img alt="Back" border="0" src="/images/buttons/back.png?1350041856" /></a>
+  </div>
+</div>
+
+<%= render 'profile_submenu' %>
+
+<div id="page-yield">
+
+   <p class="flash-msg"> Student records saved for <%= @student.first_name %> </p> 
+
+  <div id="student_profile_heading">
+
+    <div id="profile_picture_display">
+      
+        <img alt="Default_student" src="/images/master_student/profile/default_student.png?1350041856" />
+      
+    </div>
+
+    <div id ="student_main_info">
+      <h3><%= @student.first_name %></h3>
+      <h4>Course: <%#= @student.course_batch.try(:name) %></h4><!-- TODO Course name not batch name -->
+      <h4>Batch : <%#= @student.course_batch.try(:name) %></h4>
+      <h4>Adm no. : <%= @student.admission.number %></h4>
+    </div>
+
+    <div class="extender"> </div>
+
+  </div>
+
+  <div id="new_profile_info_top">
+    <div class="profile_top_banner">
+      <span class="profile">Details</span>
+      <img alt="Topbanner" src="/images/master_student/profile/topbanner.png?1350041856" /></div>
+    <table width="700">
+      <tr class="odd left">
+        <td>Admission Date</td>
+        <td class="right"><%= @student.admission.admission_date %></td>
+      </tr>
+      <tr class="even left">
+        <td>Date of Birth</td>
+        <td class="right"><%= @student.date_of_birth %></td>
+      </tr>
+      <tr class="odd left">
+        <td>Blood Group</td>
+        <td class="right"><%= @student.blood_group.name %></td>
+      </tr>
+      <tr class="even left">
+        <td>Gender</td>
+        <td class="right"><%= @student.gender %></td>
+      </tr>
+      <tr class="odd left">
+        <td>Nationality</td>
+        <td class="right"><%= @student.nationality.name %></td>
+      </tr>
+      <tr class="even left">
+        <td>Language</td>
+        <td class="right"><%= @student.mother_tongue %></td>
+      </tr>
+      <tr class="odd left">
+        <td>Category</td>
+        <td class="right"><%= @student.category.name %></td>
+      </tr>
+      <tr class="even left">
+        <td>Religion</td>
+        <td class="right"><%= @student.religion %></td>
+      </tr>
+      <tr class="odd left">
+        <td>Address</td>
+        <td class="right"><%= "#{@student.contact_detail.address_line_1}, #{@student.contact_detail.address_line_2}" %></td>
+      </tr>
+
+      <tr class="even left">
+        <td>City</td>
+        <td class="right"><%= @student.contact_detail.city %></td>
+      </tr>
+      <tr class="odd left">
+        <td>State</td>
+        <td class="right"><%= @student.contact_detail.state %></td>
+      </tr>
+      <tr class="even left">
+        <td>PIN code</td>
+        <td class="right"><%= @student.contact_detail.pincode %></td>
+      </tr>
+      <tr class="odd left">
+        <td>Country</td>
+        <td class="right"><%= @student.contact_detail.country.try(:name) %></td>
+      </tr>
+      <tr class="even left">
+        <td>Phone</td>
+        <td class="right"><%= @student.contact_detail.phone %></td>
+      </tr>
+      <tr class="odd left">
+        <td>Mobile</td>
+        <td class="right"><%= @student.contact_detail.mobile %></td>
+      </tr>
+      <tr class="even left">
+        <td>Email</td>
+        <td class="right"><%= @student.contact_detail.email %></td>
+      </tr>
+      <tr class="odd left">
+        <td>SMS Alerts</td>
+        <td class="right"><%= @student.is_sms_enabled ? "Enabled" : "Disabled" %></td>
+      </tr>
+      
+      <tr class="even left">
+        <td>In case of emergencies, contact :</td>
+        <td class="right">
+          <a href="/student/guardians/64"><%= @student.emergency_contact.try(:first_name) %><!-- TODO need to show edit guardian details -->
+          </a>
+          <span>(<a href="<%= student_emergency_contact_path %>">Change immediate contact</a>)</span>
+            
+          </td>
+        </tr>
+        <tr class="odd left">
+          <td>PASSPORT NO</td>
+          <td class="right"><%= @student.additional_detail.passport %></td>
+        </tr>
+        <tr class="odd left">
+          <td></td>
+          <td class="right">
+            <span> (<a href="/student/edit_admission4/64">Edit Additional Details</a>)</span>
+          </td>
+        </tr>
+        <tr class="odd left">
+          <td></td>
+          <td class="right">No Previous data (<a href="<%= student_previous_data_path %>">Add Previous Data</a>)</td>
+        </tr>
+    </table>
+    
+      <div class="buttons">
+        <a href="/student/edit/64" class="user_button"> ► Edit</a>
+
+        <a href="/student/profile_pdf/64" class="user_button" target="_blank"> ► PDF Report</a>
+      </div>
+    
+
+  </div>
+</div>
+ </div>
+
+      <div class="extender"></div>
+    </div>
+
+    <div id="footer">
+      <div id="footer_logo">
+        <div id="powered_by">
+          Powered by <a href=http://www.projectfedena.org target="_blank">Fedena</a>
+        </div>
+      </div>
+    </div> 

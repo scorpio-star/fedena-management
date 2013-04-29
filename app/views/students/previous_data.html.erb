@@ -24,43 +24,45 @@
     <span class="span-sub-heading">Previous Educational Details</span>
     <hr class="sub-heading"></hr>
     <%= f.fields_for :education do |education| %>
-    <div id="form-contents">
-      <div class="label-field-pair">
-        <label>Institution Name</label>
-        <div class="text-input-bg">
-          <%= education.text_field :institute_name %> 
+      <div id="form-contents">
+        <div class="label-field-pair">
+          <label>Institution Name</label>
+          <div class="text-input-bg">
+            <%= education.text_field :institute_name %> 
+          </div>
+          <div class="extender"></div>
         </div>
-        <div class="extender"></div>
-      </div>
-      <div class="label-field-pair">
-        <label>Course</label>
-        <div class="text-input-bg">
-          <%= education.text_field :course %>
+        <div class="label-field-pair">
+          <label>Course</label>
+          <div class="text-input-bg">
+            <%= education.text_field :course %>
+          </div>
+          <div class="extender"></div>
         </div>
-        <div class="extender"></div>
-      </div>
-      <div class="label-field-pair">
-        <label>Year</label>
-        <div class="text-input-bg">
-          <%= education.text_field :year %>
+        <div class="label-field-pair">
+          <label>Year</label>
+          <div class="text-input-bg">
+            <%= education.text_field :year %>
+          </div>
+          <div class="extender"></div>
         </div>
-        <div class="extender"></div>
-      </div>
-      <div class="label-field-pair">
-        <label>Total mark</label>
-        <div class="text-input-bg">
-          <%= education.text_field :total_marks %>
+        <div class="label-field-pair">
+          <label>Total mark</label>
+          <div class="text-input-bg">
+            <%= education.text_field :total_marks %>
+          </div>
+          <div class="extender"></div>
         </div>
-        <div class="extender"></div>
-      </div>
-      <% end %>
-      <div class="save-proceed-button">
-        <a href="<%= student_additional_details_path %>" class="skip">► Skip</a>
-        <%= f.submit "► Save & Proceed" %>
-      </div>
-    </div>
 
-    
+        <% end %>
+        <div class="save-proceed-button">
+          <a href="<%= student_additional_details_path %>" class="skip">► Skip</a>
+          <%= f.submit "► Save & Proceed" %>
+        </div>
+      <div style="clear:both;"></div> 
+      </div>
+
+
   <div class="ajax-subject">
     <ul id="added-subjects">
     <%= f.fields_for :subjects do |s| %>
@@ -70,14 +72,16 @@
     <%= f.link_to_add "Add Subject", :subjects %>
       
     </ul>
-    <a href="#" onclick="new Ajax.Request('/student/previous_subject/67', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('4cB023VbKa50EJirOW5xHxqqu9AxVEeyetso814pCUI=')}); return false;">Add Subject</a>
-    <div id="subject">
 
+    <!-- <a href="#" onclick="new Ajax.Request('/student/previous_subject/67', {asynchronous:true, evalScripts:true, parameters:'authenticity_token=' + encodeURIComponent('4cB023VbKa50EJirOW5xHxqqu9AxVEeyetso814pCUI=')}); return false;">Add Subject</a>
+    <div id="subject">
+ -->
     </div>
   </div>
+   <% end %>
+</form>
 </div>
-<% end %>
-  </form>
+  
 
  </div>
 
@@ -91,3 +95,4 @@
         </div>
       </div>
     </div> 
+  </div>

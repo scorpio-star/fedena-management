@@ -74,14 +74,18 @@ class StudentsController < ApplicationController
   
   def additional_details 
     @student = Student.find(params[:id])
-    @student.additional_detail.build()
+    @student.build_additional_detail
   end
     
   def additional_details_update
-  
+    @student = Student.find(params[:id])
+    if @student.update_attributes(params[:student])
+      redirect_to student_profile_path(@student)
+    end
   end  
   
-  def previous_subjects
-
+  def profile
+    @student = Student.find(params[:id])
+    
   end
 end

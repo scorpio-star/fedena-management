@@ -18,8 +18,8 @@
       </div>
 
       <div id="form-contents">
-      <span class="span-sub-heading">Additional Details</span>
-      <hr class="sub-heading"></hr>
+        <span class="span-sub-heading">Additional Details</span>
+        <hr class="sub-heading"></hr>
         <%= f.fields_for :additional_detail do |additional| %>  
           <div class="label-field-pair">
             <label>PASSPORT NO</label>
@@ -28,13 +28,14 @@
             </div>
             <div class="extender"></div>
           </div>
-          
+        <% end %>
       </div>
 
     <div class="save-proceed-button">
-      <input name="commit" type="submit" value="► Save &amp; Proceed" />
+      <%= f.submit "► Save & Proceed" %>
     </div>
-  <% end %>
+
+    <% end %>
   </form>
 
 </div>
