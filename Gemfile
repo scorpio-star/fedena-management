@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'wicked_pdf'
 
 gem 'devise'
 gem 'nested_form'

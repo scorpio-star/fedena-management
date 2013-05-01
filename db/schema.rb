@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429174152) do
+ActiveRecord::Schema.define(:version => 20130501080916) do
 
   create_table "additional_details", :force => true do |t|
     t.string   "passport"
@@ -112,8 +112,6 @@ ActiveRecord::Schema.define(:version => 20130429174152) do
   end
 
   create_table "students", :force => true do |t|
-    t.integer  "admission_id"
-    t.integer  "contact_detail_id"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"

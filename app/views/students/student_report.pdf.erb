@@ -1,0 +1,82 @@
+<table>
+  <tr>
+    <td>Admission Number</td>
+    <td><%= @student.admission.number %></td>
+  </tr>
+  <tr>
+    <td>Admission Date</td>
+    <td><%= @student.admission.admission_date %></td>
+  </tr>
+  <tr>
+    <td>Batch</td>
+    <td><%= @student.course_batch.name %></td>
+  </tr>
+  <tr>
+    <td>Course</td>
+    <td><%= @student.course_batch.name %></td>
+  </tr>
+  <tr>
+    <td>Date of Birth</td>
+    <td><%= @student.date_of_birth %></td>
+  </tr>
+  <tr>
+    <td>Blood Group</td>
+    <td><%= @student.blood_group.name %></td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td><%= @student.display_gender %></td>
+  </tr>
+  <tr>
+    <td>Nationality</td>
+    <td><%= @student.nationality.name %></td>
+  </tr>
+  <tr>
+    <td>Category</td>
+    <td><%= @student.category.code %></td>
+  </tr>
+  <tr>
+    <td>Religion</td>
+    <td><%= @student.religion %></td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td><%= "#{@student.contact_detail.address_line_1}, #{@student.contact_detail.address_line_2}" %></td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td><%= @student.contact_detail.city %></td>
+  </tr>
+  <tr>
+    <td>State</td>
+    <td><%= @student.contact_detail.state %></td>
+  </tr>
+  <tr>
+    <td>PIN Code</td>
+    <td><%= @student.contact_detail.pincode %></td>
+  </tr>
+  <tr>
+    <td>Country</td>
+    <td><%= @student.contact_detail.try(:country) %></td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td><%= @student.contact_detail.phone %></td>
+  </tr>
+  <tr>
+    <td>Mobile</td>
+    <td><%= @student.contact_detail.mobile %></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><%= @student.contact_detail.email %></td>
+  </tr>
+  <tr>
+    <td>Immediate</td>
+    <td><%= @student.emergency_contact.first_name %></td>
+  </tr>
+  <tr>
+    <td>Passport</td>
+    <td><%= @student.passport %></td>
+  </tr>
+</table>

@@ -25,20 +25,24 @@ Fedena::Application.routes.draw do
   #     end
   #   end
   resources :students
-  match "students/:id/guardian_details" => "students#guardian_details", :as => "students_guardian_details"
-  match "students/:id/guardian_details_update" => "students#guardian_details_update", :via => :put, :as => "students_guardian_details_update"
-  match "students/:id/show_guadian" => "students#show_guardian", :as => "students_show_guardian"
+ # match "students/:id/guardian_details" => "students#guardian_details", :as => "students_guardian_details"
+#  match "students/:id/guardian_details_update" => "students#guardian_details_update", :via => :put, :as => "students_guardian_details_update"
+  #match "students/:id/show_guadian" => "students#show_guardian", :as => "students_show_guardian"
   match "students/:id/emergency_contact" => "students#emergency_contact", :as => "student_emergency_contact"
   match "students/:id/emergency_contact_update" => "students#emergency_contact_update", :via => :put, :as => "student_emergency_contact_update"
   match "students/:id/previous_data" => "students#previous_data", :as => "student_previous_data"
   match "students/:id/previous_data_update" => "students#previous_data_update", :as => "student_previous_data_update", :via => :put
   match "students/:id/additional_details" => "students#additional_details", :as => "student_additional_details"
-  match "students/:id/additional_details_update" => "students#additional_details_update", :as => "student_additional_details_update"
   match "students/:id/profile" => "students#profile", :as => "student_profile"
-  match "students/:id/edit_guardian_details" => "students#edit_guardian_details", :as => "student_edit_guardian_details"
+  #match "students/:id/edit_guardian_details" => "students#edit_guardian_details", :as => "student_edit_guardian_details"
+  match "students/:id/show_emergency_contact" => "students#show_emergency_contact", :as => "student_show_emergency_contact"
 
-
-
+  match "students/:id/guardian" => "guardians#new", :as => "new_guardian"
+  match "students/:id/guardian_create" => "guardians#create", :as => "guardian_create", :method => :post
+  match "students/:id/show_guardian" => "guardians#show", :as => "show_guardian"
+  match "students/:id/guardian_update" => "guardians#update", :as => "guardian_update", :method => :put
+  match "students/:id/edit_guardian" => "guardians#edit", :as => "edit_guardian"
+  match "students/:id/generate_student_report" => "students#generate_student_report", :as => "generate_student_report"
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

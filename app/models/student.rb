@@ -15,4 +15,16 @@ class Student < ActiveRecord::Base
   has_many :subjects
 
   accepts_nested_attributes_for :contact_detail, :admission, :guardians, :education, :subjects
+
+  def display_gender
+    self.gender == "1" ? "Female" : "Male"
+  end
+
+  def student_report_name
+    "#{self.id}_student_report.pdf"
+  end
+
+  def student_report_path
+    File.join(Fedena::Application.config.student_report_dir, student_report_name)
+  end
 end

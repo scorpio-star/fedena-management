@@ -13,7 +13,7 @@
 </div>
 
 <div id="page-yield">
-  <%= form_for @student, :url => student_additional_details_update_path(@student) do |f| %>
+  <%= form_for @student, :url => student_previous_data_update_path(@student, :additional_data => @additional_data) do |f| %>
       <div style="margin:0;padding:0;display:inline">
       </div>
 

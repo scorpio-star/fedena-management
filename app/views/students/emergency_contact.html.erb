@@ -6,7 +6,7 @@
 
 <div id="page-yield">
   <p class="flash-msg">Select one of the guardians as emergency contact.</p>
-  <%= form_for @student, :url => student_emergency_contact_update_path(@student) do |f| %>
+  <%= form_for @student, :url => student_emergency_contact_update_path(@student, :emergency_contact => @emergency_contact) do |f| %>
 
   <div style="margin:0;padding:0;display:inline">
     <% @guardians.each do |guardian| %>

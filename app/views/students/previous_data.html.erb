@@ -17,7 +17,7 @@
 
 <div id="page-yield">
 
-  <%= nested_form_for @student, :url => student_previous_data_update_path(@student) do |f| %>
+  <%= form_for @student, :url => student_previous_data_update_path(@student, :previous_data => @previous_data) do |f| %>
     <div style="margin:0;padding:0;display:inline">
     </div>
 

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fedena</title>
+  <%= stylesheet_link_tag "application", "guardians", :media => 'all' %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div id="header_bg">
+      <div id="header">
+        <div id="outer-header-link">
+          <div id="institution-name">
+            Foradian School
+          </div>
+          <div id="header_link" >
+            <div id="messages-link">
+              <a href="/reminder">Messages</a>
+<span>(0)</span>
+            </div>
+            <div id="profile-link">
+            <a href="/user/profile/admin" class="profile-link">Fedena</a>
+            </div>
+            <div id="logout-link">
+            <a href="/user/logout">Log out</a>
+            </div>
+          </div>
+        </div>
+        <div id="outer-main-menu">
+          
+
+<ul id="main-menu">
+  <li class="a"><a href="/user/dashboard">Dashboard</a></li>
+  
+    <li class="a"><a href="/student">Students</a></li>
+  
+  
+    <li class="a"><a href="/student_attendance">Attendance ▼</a>
+      <ul class="level-1">
+        <li><a href="/attendances">Attendance register</a></li>
+        <li><a href="/attendance_reports">Attendance Report</a></li>
+      </ul>
+    </li>
+  
+  
+    <li class="a"><a href="/configuration">Settings ▼</a>
+      <ul class="level-1">
+        
+          <li><a href="/courses">Manage Course/Batch</a></li>
+        
+        
+          <li><a href="/student/categories">Manage Student Category</a></li>
+        
+        
+          <li><a href="/subjects">Manage Subject</a></li>
+        
+        
+          <li><a href="/configuration/settings">General Settings</a></li>
+        
+        
+          <li><a href="/student/add_additional_details">Add Admission Additional Detail</a></li>
+        
+        
+          <li><a href="/sms">SMS module</a></li>
+        
+      </ul>
+    </li>
+  
+  <!--
+  <li><a href="/news">News</a></li> -->
+  
+    <li class="a"><a href="/timetable">Timetable <span class='down-arrow'>▼</span></a>
+      <ul class="level-1">
+        
+          <li><a href="/timetable/new_timetable">Create Timetable</a></li>
+        
+        
+          <li><a href="/timetable/edit_master">Edit Timetable</a></li>
+        
+        
+          <li><a href="/class_timings">Set class timings</a></li>
+        
+        
+          <li><a href="/weekday">Create Weekdays</a></li>
+        
+        
+          <li><a href="/timetable/view">View Timetables</a></li>
+        
+        
+          <li><a href="/timetable/teachers_timetable">Teacher Timetable</a></li>
+        
+        <li><a href="/timetable/timetable">Institutional Timetable</a></li>
+        
+        
+          <li><a href="/timetable/work_allotment">Work Allotment</a></li>
+        
+      </ul>
+    </li>
+  
+  
+    
+  
+  <li class="a"><a href="#">More ▼</a>
+    <ul class="level-1" id="more-parent">
+      <li><a href="/calendar">Calendar</a></li>
+      
+        <li><a href="/exam">Examination <span class='right-arrow'>▶</span></a>
+          <ul class="level-2" id="exam-parent">
+            
+            
+            
+              
+                <li><a href="/exam/settings">Settings</a> </li>
+              
+              
+                <li><a href="/exam/create_exam">Exam Management</a>  </li>
+              
+              
+                <li><a href="/exam/generate_reports">Generate Reports</a> </li>
+              
+              <li><a href="/exam/report_center">Report Center</a></li>
+            
+            
+          </ul>
+        </li>
+      
+      <li><a href="/news">News</a></li>
+      
+        <li><a href="/event">Event Creation</a></li>
+      
+      
+        <li><a href="/employee/hr">Human Resource <span class='right-arrow'>▶</span></a>
+          <ul class="level-2">
+            
+              <li><a href="/employee/settings">Setting</a></li>
+            
+            
+              <li><a href="/employee/employee_management">Employee Management</a></li>
+            
+            
+              <li><a href="/employee/employee_attendance">Employee Leave Management</a></li>
+            
+            
+              <li><a href="/employee/payslip">Create Payslip</a></li>
+            
+            
+              <li><a href="/employee/search">Employee Search</a></li>
+            
+            
+              <li><a href="/employee/department_payslip">Employee payslip</a></li>
+            
+            
+          </ul>
+        </li>
+      
+      
+        <li><a href="/finance">Finance <span class='right-arrow'>▶</span></a>
+          <ul class="level-2" id="finance_menu">
+            <li><a href="/finance/fees_index">Fees</a> </li>
+            <li><a href="/finance/categories">Category</a> </li>
+            <li><a href="/finance/transactions">Transactions</a> </li>
+            <li><a href="/finance/donation">Donations</a></li>
+            <li><a href="/finance/automatic_transactions">Automatic Transactions</a></li>
+            
+              <li><a href="/finance/payslip_index">Payslip</a></li>
+            
+            <li><a href="/finance/asset_liability">Asset Liability Management</a></li>
+          </ul>
+        </li>
+      
+      
+        <li><a href="/user">User</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+<script type="text/javascript">
+  function load_menu_from_plugins(){
+
+  }
+</script>
+
+        </div>
+        <div id="outer-autosuggest-menu">
+          
+<script type="text/javascript">
+  jQuery.noConflict();
+  function __highlight(s, t) {
+    var matcher = new RegExp("("+jQuery.ui.autocomplete.escapeRegex(t)+")", "ig" );
+    return s.replace(matcher, "<strong>$1</strong>");
+  }
+
+  jQuery.ui.autocomplete.prototype._renderItem = function (ul, item) {
+    //  item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + jQuery.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
+    if (item.menutype == 'action')    {
+      return jQuery("<li></li>")
+      .data("item.autocomplete",item)
+      .append("<a class='action'>"+ item.label +"</a>")
+      .appendTo(ul);
+    }
+    item.label = __highlight(item.label, this.term)
+    return jQuery("<li></li>")
+    .data("item.autocomplete", item)
+    .append("<a>" + item.label + "</a>")
+    .appendTo(ul);
+  };
+
+  jQuery(document).bind('keypress', 'q', function(){jQuery("input#autosuggest_menu_input").focus();return false;});
+  gotoLink = function(event,ui){
+    window.location.href = ui.item.value;
+    return false;
+  };
+  searchoptions = function (request,response){
+    var query=request.term;
+    var available_options = [{"menu_type":"link","value":"/student/admission1","label":"Student Admission"},{"menu_type":"link","value":"/employee/admission1","label":"Employee Admission"},{"menu_type":"link","value":"/exam","label":"Exam"},{"menu_type":"link","value":"/grading_levels","label":"Set Grading Levels"},{"menu_type":"link","value":"/exam/create_exam","label":"Exam Management"},{"menu_type":"link","value":"/exam/exam_wise_report","label":"Exam Wise Report"},{"menu_type":"link","value":"/exam/subject_wise_report","label":"Subject Wise Report"},{"menu_type":"link","value":"/exam/grouped_exam_report","label":"Grouped Exam Report"},{"menu_type":"link","value":"/news","label":"News"},{"menu_type":"link","value":"/event","label":"Event"},{"menu_type":"link","value":"/news/all","label":"View News"},{"menu_type":"link","value":"/news/add","label":"Add News"},{"menu_type":"link","value":"/employee/hr","label":"Employee"},{"menu_type":"link","value":"/employee/settings","label":"Employee Settings"},{"menu_type":"link","value":"/employee/subject_assignment","label":"Employee Subject Association"},{"menu_type":"link","value":"/employee/employee_attendance","label":"Employee Leave Management"},{"menu_type":"link","value":"/employee_attendance/add_leave_types","label":"Add Leave Type"},{"menu_type":"link","value":"/employee_attendances","label":"Attendance Register"},{"menu_type":"link","value":"/employee_attendance/report","label":"Attendance Report"},{"menu_type":"link","value":"/employee_attendance/manual_reset","label":"Reset Leave"},{"menu_type":"link","value":"/employee/payslip","label":"Employee Payslip"},{"menu_type":"link","value":"/employee/department_payslip","label":"Department Wise Payslip"},{"menu_type":"link","value":"/finance","label":"Finance"},{"menu_type":"link","value":"/finance/fees_index","label":"Manage Fees"},{"menu_type":"link","value":"/finance/fee_collection","label":"Fee Collection"},{"menu_type":"link","value":"/finance/fees_submission_batch","label":"Fee Submission By Course"},{"menu_type":"link","value":"/finance/fees_student_search","label":"Fee Submission For Each Student"},{"menu_type":"link","value":"/finance/categories","label":"Finance Categories"},{"menu_type":"link","value":"/finance/transactions","label":"Transactions"},{"menu_type":"link","value":"/finance/expense_create","label":"Add Expense"},{"menu_type":"link","value":"/finance/expense_list","label":"Expense List"},{"menu_type":"link","value":"/finance/income_create","label":"Add Income"},{"menu_type":"link","value":"/finance/income_list","label":"Income List"},{"menu_type":"link","value":"/finance/monthly_report","label":"Transaction Report"},{"menu_type":"link","value":"/finance/compare_report","label":"Compare Transactions"},{"menu_type":"link","value":"/finance/donation","label":"Donations"},{"menu_type":"link","value":"/finance/donors","label":"Donors"},{"menu_type":"link","value":"/finance/automatic_transactions","label":"Automatic Transactions"},{"menu_type":"link","value":"/finance/view_monthly_payslip","label":"View Payslip"},{"menu_type":"link","value":"/finance/asset","label":"Asset"},{"menu_type":"link","value":"/finance/view_asset","label":"View Assets"},{"menu_type":"link","value":"/finance/liability","label":"Liability"},{"menu_type":"link","value":"/finance/view_liability","label":"View Liability"},{"menu_type":"link","value":"/timetable","label":"Timetable"},{"menu_type":"link","value":"/class_timings","label":"Set Class Timings"},{"menu_type":"link","value":"/timetable/view","label":"View Timetables"},{"menu_type":"link","value":"/timetable/timetable","label":"Institutional Timetable"},{"menu_type":"link","value":"/weekday","label":"Create Weekdays"},{"menu_type":"link","value":"/configuration","label":"Settings"},{"menu_type":"link","value":"/courses/manage_course","label":"Manage Course"},{"menu_type":"link","value":"/courses/manage_batches","label":"Manage Batch"},{"menu_type":"link","value":"/courses/new","label":"Add Course"},{"menu_type":"link","value":"/batch_transfers","label":"Batch Transfers"},{"menu_type":"link","value":"/student/categories","label":"Manage Student Category"},{"menu_type":"link","value":"/subjects","label":"Manage Subjects"},{"menu_type":"link","value":"/configuration/settings","label":"General Settings"},{"menu_type":"link","value":"/student/add_additional_details","label":"Add Admission Additional Detail"},{"menu_type":"link","value":"/student_attendance","label":"Student Attendance"},{"menu_type":"link","value":"/attendances","label":"Attendance Register"},{"menu_type":"link","value":"/attendance_reports","label":"Attendance Report"},{"menu_type":"link","value":"/student/view_all","label":"View Students"},{"menu_type":"link","value":"/student/advanced_search","label":"Student Advanced Search"},{"menu_type":"link","value":"/finance/master_fees","label":"Create Fees"},{"menu_type":"link","value":"/finance/fees_defaulters","label":"Fee Defaulters"},{"menu_type":"link","value":"/finance/fees_student_structure_search","label":"Fee Structure"},{"menu_type":"link","value":"/employee/advanced_search","label":"Employee Advance Search"},{"menu_type":"link","value":"/employee/view_all","label":"View Employees"}];
+    var options = jQuery.ui.autocomplete.filter(available_options,query).slice(0,11);
+    options.push({'menutype': 'action',
+      'label' : 'Search students : <strong>'+query+'</strong>',
+      'value' : "/student/advanced_search?search%5Border%5D=&search%5Bfirst_name_or_middle_name_or_last_name_like%5D="+query+"&search%5Badmission_no_equals%5D=&advv_search%5Bcourse_id%5D=&search%5Bbatch_id_equals%5D=&search%5Bstudent_category_id_equals%5D=&search%5Bgender_equals%5D=&search%5Bblood_group_like%5D=&search%5Bnationality_id_equals%5D=&advv_search%5Bdoa_option%5D=&advv_search%5Bdoa_year%5D=&advv_search%5Bdob_option%5D=&advv_search%5Bdob_year%5D=&commit=Search"})
+
+    options.push({'menutype': 'action',
+      'label' : 'Search employees: <strong>'+query+'</strong>',
+      'value' : "/employee/advanced_search?search%5Border%5D=&search%5Bfirst_name_or_middle_name_or_last_name_like%5D="+query+"&search%5Bemployee_number_equals%5D=&search%5Bgender_equals%5D=&search%5Bblood_group_like%5D=&search%5Bmarital_status_like%5D=&search%5Bnationality_id_equals%5D=&search%5Bemployee_category_id_equals%5D=&search%5Bemployee_department_id_equals%5D=&search%5Bemployee_position_id_equals%5D=&search%5Bemployee_grade_id_equals%5D=&adv_search%5Bdoj_option%5D=&adv_search%5Bdoj_year%5D=&adv_search%5Bdob_option%5D=&adv_search%5Bdob_year%5D=&search%5Bstatus_equals%5D=true&commit=Search"})
+
+    response(options)
+  }
+
+
+  jQuery(document).ready(function() {
+    jQuery("input#autosuggest_menu_input").autocomplete({
+      source: searchoptions,
+      select : gotoLink,
+      focus: function(event, ui) { return false; }
+    });
+  });
+</script>
+<input id="autosuggest_menu_input" name="autosuggest_menu" placeholder="Search Actions, Events and People" type="text" value="" />
+
+
+        </div>
+      </div>
+    </div>
+<%= yield %>
+
+</body>
+</html>

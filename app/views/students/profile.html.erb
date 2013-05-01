@@ -118,7 +118,7 @@
       <tr class="even left">
         <td>In case of emergencies contact :</td>
         <td class="right">
-          <a href="<%= student_edit_guardian_details_path %>">df<%= @student.emergency_contact.id %><!-- TODO need to show edit guardian details -->
+          <a href="<%= student_show_emergency_contact_path %>"><%= @student.emergency_contact.first_name %><!-- TODO need to show edit guardian details -->
           </a>
           <span>(<a href="<%= student_emergency_contact_path %>">Change immediate contact</a>)</span>
             
@@ -131,18 +131,34 @@
         <tr class="odd left">
           <td></td>
           <td class="right">
-            <span> (<a href="/student/edit_admission4/64">Edit Additional Details</a>)</span>
+            <span> (<a href="<%= student_additional_details_path %>">Edit Additional Details</a>)</span>
           </td>
         </tr>
+        <!--<tr class="even left">
+          <td>Institute Name</td>
+          <td class="right"><%#= @student.education.institute_name %></td>
+        </tr>
+        <tr class="even left">
+          <td>Course</td>
+          <td class="right"><%#= @student.education.course %></td>
+        </tr>
+        <tr class="even left">
+          <td>Year</td>
+          <td class="right"><%#= @student.education.year %></td>
+        </tr>
+        <tr class="even left">
+          <td>Total Marks</td>
+          <td class="right"><%#= @student.education.total_marks %></td>
+        </tr>-->
         <tr class="odd left">
           <td></td>
-          <td class="right">No Previous data (<a href="<%= student_previous_data_path %>">Add Previous Data</a>)</td>
+          <td class="right">(<a href="<%= student_previous_data_path %>">Edit Previous Data</a>)</td>
         </tr>
     </table>
       <div class="buttons">
         <a href="<%= edit_student_path %>" class="user_button"> ► Edit</a>
 
-        <a href="/student/profile_pdf/64" class="user_button" target="_blank"> ► PDF Report</a>
+        <a href="<%= generate_student_report_path %>" class="user_button" target="_blank"> ► PDF Report</a>
       </div>
     
 

@@ -1,0 +1,222 @@
+<div id="content"> 
+<div id="content-header">
+  <img src="/images/admission/admission_page_logo.jpg" />
+  <h1>Admission</h1>
+  <h3>Step 2 - Parent/guardian details</h3>
+</div>
+<div id="page-yield">
+
+   <p class="flash-msg"> Student Record Saved Successfully. Please fill the Parent Details. </p> 
+
+  <div id="parents">
+
+    
+
+  </div>
+
+  <!-- <form action="/student/admission2/72" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="kAQdPRheT1ALt6LgkTKpxxW0Q1cFoe06T77CHL8+NXA=" /></div> -->
+  <div style="margin:0;padding:0;display:inline">
+  <%= form_for(@student, :url => @edit ? guardian_update_path(@student, :edit => @edit) : guardian_create_path(@student), :html => { :method => :post, :autocomplete => 'off' }) do |f| %>
+  </div>
+    <div id="admission1_form">
+
+      <div id="admission1_form_vertical_block_left">
+
+        <div class="label-field-pair">
+          <label for="parent_detail_student_id">Student Admission number</label>
+          <div class="text_display"><%= @student.admission.number %></div>
+         <!--  <input id="    guardian_ward_id" name="guardian[ward_id]" type="hidden" value="72" /> -->
+        </div>
+
+        <br/>
+        <span class="span-sub-heading">Parent - Personal Details</span>
+        <hr class="sub-heading"></hr>
+        <%= f.fields_for :guardians do |guardian| %>
+        <div class="label-field-pair">
+          <label for="parent_detail_name">First Name<span class="necessary-field">*</span></label>
+          <div class="text-input-bg">
+            <%= guardian.text_field :first_name %>
+          </div>
+        </div>
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_name">Last Name</label>
+          <div class="text-input-bg">
+            <%= guardian.text_field :last_name %>
+          </div>
+        </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_relation">Relation<span class="necessary-field">*</span></label>
+          <div class="text-input-bg">
+            <%= guardian.text_field :relation %>
+          </div>
+        </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_dob">Date of Birth</label>
+          <div class="text-input-bg">
+            <%= guardian.text_field :date_of_birth %>
+          </div>
+        </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_education">Education</label>
+          <div class="text-input-bg">
+            <%= guardian.text_field :education %>
+          </div>
+        </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_occupation">Occupation</label>
+          <div class="text-input-bg">
+            <%= guardian.text_field :occupation %>
+          </div>
+        </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_income">Income</label>
+          <div class="text-input-bg">
+            <%= guardian.text_field :income %>
+          </div>
+        </div>
+
+        <br/>
+
+        <span class="span-sub-heading">Parent - Contact Details</span>
+
+        <hr class="sub-heading"></hr>
+        <div class="label-field-pair">
+          <label for="parent_detail_email">Email</label>
+          <div class="text-input-bg">
+            <%= guardian.text_field :email %>
+          </div>
+        </div>
+
+        <hr class="label-underline"></hr>
+      </div>
+
+      <div id="admission1_form_vertical_block_right">
+
+        <div class="label-field-pair">
+          <label for="master_student_city">Address Line 1</label>
+          
+            <div class="text-input-bg">
+              <%= guardian.text_field :address_line_1 %>
+            </div>
+          
+        </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="master_student_city">Address Line 2</label>
+          
+            <div class="text-input-bg">
+              <%= guardian.text_field :address_line_2 %>
+            </div>
+          
+        </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_city">City</label>
+          
+            <div class="text-input-bg">
+              <%= guardian.text_field :city %>
+            </div>
+          
+        </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_state">State</label>
+          
+            <div class="text-input-bg">
+              <%= guardian.text_field :state %>
+            </div>
+          
+        </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_country">Country</label>
+          <div class="text-input-bg">
+            <%= guardian.select :country_id, options_from_collection_for_select(Nationality.all, :id, :name) %>
+          </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_office_phone1">Phone 1</label>
+          <div class="text-input-bg">
+            <%= guardian.text_field :phone_1 %>
+          </div>
+        </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_office_phone2">Phone 2</label>
+          <div class="text-input-bg">
+            <%= guardian.text_field :phone_2 %>
+          </div>
+        </div>
+
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="parent_detail_mob_phone">Mobile</label>
+          <div class="text-input-bg">
+            <%= guardian.text_field :mobile %>
+          </div>
+        </div>
+
+        <hr class="label-underline"></hr>
+
+      </div>
+
+      <div class="extender">
+        <% if !@edit %>
+          <%= f.submit " ► Finish", :class => "submit_button3" %>
+        <% else %>
+          <%= f.submit " ► Update", :class => "submit_button3" %>
+        <% end %>
+      </div>
+      <div id="skip">
+        <a href="/student/admission3/72" class="submit_button3">► Click here to skip</a>
+      </div>
+
+    </div>
+    <% end %>
+    <% end %>
+  </form>
+  
+
+</div> </div>
+
+      <div class="extender"></div>
+    </div>
+
+    <div id="footer">
+      <div id="footer_logo">
+        <div id="powered_by">
+          Powered by <a href=http://www.projectfedena.org target="_blank">Fedena</a>
+        </div>
+      </div>
+    </div> 
+  </body>

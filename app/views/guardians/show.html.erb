@@ -1,0 +1,33 @@
+<div id="content"> 
+<div id="content-header">
+  <img src="/images/admission/admission_page_logo.jpg" />
+  <h1>Admission</h1>
+  <h3>Step 2 - Parent/guardian details</h3>
+</div>
+<div id="page-yield">
+
+  
+
+  <div id="parents">
+
+    
+
+      <ul id="parents-list">
+        <p>The following guardians have been saved for e   </p>
+          <li class="listodd"><%= @guardian.first_name %></li>
+        
+        <div id="add-more-parent">
+          <a href="<%= new_guardian_path %>" onclick="Effect.toggle(&quot;admission1_form&quot;,'slide',{});
+Element.hide(&quot;parents&quot;);; return false;">► Add another guardian</a>
+        </div>
+        <div id="skip">
+            <a href="<%= student_emergency_contact_path %>">► Finish</a>
+        </div>
+        <script type="text/javascript">
+          Event.observe(window, 'load', function() { $('admission1_form').hide(); });
+        </script>
+      </ul>
+
+    
+
+  </div>

@@ -34,4 +34,5 @@ Fedena::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.student_report_dir = "/home/alekhya/myact/scorpio-star/student_report"
 end
